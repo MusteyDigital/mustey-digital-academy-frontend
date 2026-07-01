@@ -57,9 +57,9 @@ export default function DashboardPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {enrollments?.map((enrollment: any) => {
               const firstLesson = enrollment.course?.modules?.[0]?.lessons?.[0];
-              const continueUrl = firstLesson
-                ? `/courses/${enrollment.course_id}/lessons/${firstLesson.id}`
-                : `/courses/${enrollment.course_id}`;
+              const token = typeof window !== "undefined" ? localStorage.getItem("token") : null;
+              const lessonPath = firstLesson ? `/courses/${enrollment.course_id}/lessons/${firstLesson.id}` : `/courses/${enrollment.course_id}`;
+              const continueUrl = token ? `https://musteydigitalacademy.online/auth/token-login?token=${token}&redirect=${lessonPath}` : `/courses/${enrollment.course_id}`;
 
               return (
                 <div
