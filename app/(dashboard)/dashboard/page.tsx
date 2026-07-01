@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import ProtectedRoute from "@/components/auth/ProtectedRoute";
 import { useAuth } from "@/context/AuthContext";
@@ -55,28 +55,35 @@ export default function DashboardPage() {
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {enrollments?.map((enrollment: any) => (
-              <div
-                key={enrollment.id}
-                className="bg-white rounded-xl shadow p-6 border"
-              >
-                <h3 className="font-bold text-lg">
-                  {enrollment.course?.title}
-                </h3>
-                <p className="text-sm text-gray-500 mt-1 capitalize">
-                  Status: {enrollment.status}
-                </p>
-                <Button
-                  asChild
-                  className="w-full mt-4"
-                  variant="outline"
+            {enrollments?.map((enrollment: any) => {
+              const firstLesson = enrollment.course?.modules?.[0]?.lessons?.[0];
+              const continueUrl = firstLesson
+                ? `/courses/${enrollment.course_id}/lessons/${firstLesson.id}`
+                : `/courses/${enrollment.course_id}`;
+
+              return (
+                <div
+                  key={enrollment.id}
+                  className="bg-white rounded-xl shadow p-6 border"
                 >
-                  <Link href={`/courses/${enrollment.course_id}`}>
-                    Continue Learning
-                  </Link>
-                </Button>
-              </div>
-            ))}
+                  <h3 className="font-bold text-lg">
+                    {enrollment.course?.title}
+                  </h3>
+                  <p className="text-sm text-gray-500 mt-1 capitalize">
+                    Status: {enrollment.status}
+                  </p>
+                  <Button
+                    asChild
+                    className="w-full mt-4"
+                    variant="outline"
+                  >
+                    <Link href={continueUrl}>
+                      Continue Learning
+                    </Link>
+                  </Button>
+                </div>
+              );
+            })}
           </div>
         )}
       </main>
