@@ -1,4 +1,4 @@
-import { Course } from "@/types/course";
+﻿import { Course } from "@/types/course";
 
 export const courses: Course[] = [
   {
@@ -8,7 +8,7 @@ export const courses: Course[] = [
       "Learn Excel, SQL, Power BI, and Python for real-world data analysis.",
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
-    price: "₦500",
+    price: "â‚¦500",
     lessons: 35,
     duration: "8 Hours",
     rating: 4.9,
@@ -27,25 +27,25 @@ export const courses: Course[] = [
       {
         title: "Module 1 - Introduction",
         lessons: [
-          "Welcome",
-          "Course Overview",
-          "Setting Up Your Tools",
+          { id: 0, title: "Welcome" },
+          { id: 0, title: "Course Overview" },
+          { id: 0, title: "Setting Up Your Tools" },
         ],
       },
       {
         title: "Module 2 - Excel Essentials",
         lessons: [
-          "Working with Data",
-          "Formulas",
-          "Charts",
+          { id: 0, title: "Working with Data" },
+          { id: 0, title: "Formulas" },
+          { id: 0, title: "Charts" },
         ],
       },
       {
         title: "Module 3 - SQL Basics",
         lessons: [
-          "SELECT",
-          "WHERE",
-          "JOIN",
+          { id: 0, title: "SELECT" },
+          { id: 0, title: "WHERE" },
+          { id: 0, title: "JOIN" },
         ],
       },
     ],
@@ -68,7 +68,7 @@ export const courses: Course[] = [
       "Learn React, Next.js, Laravel and MySQL from beginner to advanced.",
     image:
       "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800",
-    price: "₦2,500",
+    price: "â‚¦2,500",
     lessons: 80,
     duration: "25 Hours",
     rating: 5,
@@ -86,15 +86,15 @@ export const courses: Course[] = [
     curriculum: [
       {
         title: "Module 1",
-        lessons: ["HTML", "CSS", "JavaScript"],
+        lessons: [{ id: 0, title: "HTML" }, { id: 0, title: "CSS" }, { id: 0, title: "JavaScript" }],
       },
       {
         title: "Module 2",
-        lessons: ["React", "Hooks", "State"],
+        lessons: [{ id: 0, title: "React" }, { id: 0, title: "Hooks" }, { id: 0, title: "State" }],
       },
       {
         title: "Module 3",
-        lessons: ["Laravel", "API", "Authentication"],
+        lessons: [{ id: 0, title: "Laravel" }, { id: 0, title: "API" }, { id: 0, title: "Authentication" }],
       },
     ],
 
@@ -116,7 +116,7 @@ export const courses: Course[] = [
       "Understand ethical hacking and modern cybersecurity practices.",
     image:
       "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800",
-    price: "₦1,500",
+    price: "â‚¦1,500",
     lessons: 42,
     duration: "12 Hours",
     rating: 4.8,
@@ -125,7 +125,7 @@ export const courses: Course[] = [
     objectives: [
       "Understand security concepts",
       "Network protection",
-      "Ethical hacking",
+      { id: 0, title: "Ethical Hacking" },
       "Threat analysis",
       "Password security",
       "Cyber hygiene",
@@ -134,15 +134,15 @@ export const courses: Course[] = [
     curriculum: [
       {
         title: "Module 1",
-        lessons: ["Security Basics", "Threats"],
+        lessons: [{ id: 0, title: "Security Basics" }, { id: 0, title: "Threats" }],
       },
       {
         title: "Module 2",
-        lessons: ["Ethical Hacking", "Recon"],
+        lessons: [{ id: 0, title: "Ethical Hacking" }, { id: 0, title: "Recon" }],
       },
       {
         title: "Module 3",
-        lessons: ["Firewalls", "VPN"],
+        lessons: [{ id: 0, title: "Firewalls" }, { id: 0, title: "VPN" }],
       },
     ],
 
